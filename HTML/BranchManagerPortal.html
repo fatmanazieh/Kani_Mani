@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Branch Manager Portal | ARMS</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#b6c7e9",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#301700",
+                        "on-primary-container": "#7586a5",
+                        "outline-variant": "#c5c6ce",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container": "#eceef0",
+                        "primary": "#00030a",
+                        "tertiary-fixed": "#ffdcc0",
+                        "surface-container-low": "#f2f4f6",
+                        "primary-fixed": "#d6e3ff",
+                        "inverse-surface": "#2d3133",
+                        "surface-variant": "#e0e3e5",
+                        "secondary-fixed-dim": "#e9c176",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#b6c7e9",
+                        "on-tertiary-container": "#a67d59",
+                        "secondary-fixed": "#ffdea5",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-fixed": "#2e1600",
+                        "primary-container": "#0a1d37",
+                        "on-surface-variant": "#44474d",
+                        "tertiary": "#070200",
+                        "background": "#f7f9fb",
+                        "outline": "#75777e",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#364763",
+                        "tertiary-fixed-dim": "#edbd95",
+                        "surface": "#f7f9fb",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1e",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary": "#775a19",
+                        "on-secondary-container": "#785a1a",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#081c36",
+                        "on-surface": "#191c1e",
+                        "secondary-container": "#fed488",
+                        "on-tertiary-fixed-variant": "#604021",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#4e5f7c",
+                        "on-secondary-fixed": "#261900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+
+<body class="bg-surface font-body text-on-surface">
+    <!-- SideNavBar -->
+    <aside
+        class="fixed left-0 top-0 h-screen w-64 z-40 bg-[#0A1D37] dark:bg-slate-950 flex flex-col h-full py-6 shadow-xl font-['Inter'] text-sm font-medium tracking-wide">
+        <div class="px-6 mb-10 flex flex-col items-start">
+            <div class="w-12 h-12 bg-white/10 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
+                <img alt="Academy Logo" class="w-10 h-10 object-contain"
+                    data-alt="minimalist university crest logo in white outline on a dark navy background"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHJES2v8_lkuaOuA9qTzoocvbICpFjjalE8ec079Y_gQgyCwy1P2hUX0wdTjr-Df2s918Zq9KTbF_KoD_xf7J48oILqLaZRcQV-_Nd8Ne8gkQq6VnmYAABuv7z7bqbJyWlW2PzyAq9xwCOFyOj2g3EjirJ831xGQIV6nmpwfyoPq5NJtUJjzv9W3r0v4w9HyiEWM2H1HzpMg-dDMwdxl4wbW85R-662tnLuOnaSXY0lMrSXYKrloAYcX2CSnIHsuWAGvm-D_CGzJ1O" />
+            </div>
+            <h1 class="text-lg font-black text-white">AASTMT ARMS</h1>
+            <p class="text-[10px] text-white/50 tracking-widest uppercase">Academic Resource Management</p>
+        </div>
+        <nav class="flex-1 space-y-1">
+            <div
+                class="text-slate-300 hover:text-white py-3 px-6 flex items-center gap-3 hover:bg-white/10 transition-all duration-200 cursor-pointer">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span>Dashboard</span>
+            </div>
+            <div
+                class="text-slate-300 hover:text-white py-3 px-6 flex items-center gap-3 hover:bg-white/10 transition-all duration-200 cursor-pointer">
+                <span class="material-symbols-outlined">pending_actions</span>
+                <span>Pending Requests</span>
+            </div>
+            <div
+                class="text-slate-300 hover:text-white py-3 px-6 flex items-center gap-3 hover:bg-white/10 transition-all duration-200 cursor-pointer">
+                <span class="material-symbols-outlined">edit_calendar</span>
+                <span>Bookings</span>
+            </div>
+            <div
+                class="border-l-4 border-[#C5A059] bg-white/5 text-[#C5A059] font-bold py-3 px-6 flex items-center gap-3 translate-x-1 duration-200">
+                <span class="material-symbols-outlined">account_balance</span>
+                <span>Branch Portal</span>
+            </div>
+            <div
+                class="text-slate-300 hover:text-white py-3 px-6 flex items-center gap-3 hover:bg-white/10 transition-all duration-200 cursor-pointer">
+                <span class="material-symbols-outlined">analytics</span>
+                <span>Staff Stats</span>
+            </div>
+            <div
+                class="text-slate-300 hover:text-white py-3 px-6 flex items-center gap-3 hover:bg-white/10 transition-all duration-200 cursor-pointer">
+                <span class="material-symbols-outlined">settings</span>
+                <span>System Settings</span>
+            </div>
+            <div
+                class="text-slate-300 hover:text-white py-3 px-6 flex items-center gap-3 hover:bg-white/10 transition-all duration-200 cursor-pointer">
+                <span class="material-symbols-outlined">assessment</span>
+                <span>Reports</span>
+            </div>
+        </nav>
+        <div class="mt-auto px-6 py-4">
+            <button
+                class="w-full py-3 bg-[#C5A059] text-[#0A1D37] font-bold rounded-lg hover:bg-amber-400 transition-colors flex items-center justify-center gap-2 mb-6">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'wght' 600;">add</span>
+                <span>New Booking Request</span>
+            </button>
+            <div class="space-y-1">
+                <div class="text-slate-300 hover:text-white py-2 flex items-center gap-3 cursor-pointer">
+                    <span class="material-symbols-outlined text-lg">help</span>
+                    <span class="text-xs">Help Center</span>
+                </div>
+                <div class="text-slate-300 hover:text-white py-2 flex items-center gap-3 cursor-pointer">
+                    <span class="material-symbols-outlined text-lg">logout</span>
+                    <span class="text-xs">Log Out</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="ml-64 min-h-screen">
+        <!-- TopNavBar -->
+        <header
+            class="bg-[#0A1D37] dark:bg-slate-950 flex justify-between items-center w-full px-8 fixed top-0 z-50 h-16 shadow-[0px_12px_32px_rgba(10,29,55,0.04)] font-['Inter'] tracking-tight">
+            <div class="flex items-center gap-4">
+                <h2 class="text-xl font-bold text-white tracking-[-0.02em]">Branch Manager Portal</h2>
+                <div class="hidden md:flex h-8 w-[1px] bg-white/10 mx-2"></div>
+                <span class="text-white/60 text-sm hidden md:block">Approval Authority Dashboard</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-1 px-4 py-1.5 rounded-full bg-white/10 border border-white/10">
+                    <span class="material-symbols-outlined text-[#C5A059] text-sm"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="text-white text-sm font-medium tracking-wide">Ramadan Mode</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors relative">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <span class="absolute top-2 right-2 w-2 h-2 bg-amber-500 rounded-full"></span>
+                    </button>
+                    <div class="flex items-center gap-3 pl-2 cursor-pointer group">
+                        <div class="text-right">
+                            <p class="text-white text-xs font-semibold leading-none">Prof. Mahmoud Zaid</p>
+                            <p class="text-white/40 text-[10px] uppercase tracking-tighter">Branch Manager</p>
+                        </div>
+                        <div class="w-9 h-9 rounded-full bg-white/20 overflow-hidden ring-2 ring-[#C5A059]/30">
+                            <img alt="User Profile" class="w-full h-full object-cover"
+                                data-alt="close-up portrait of a professional elderly academic man with glasses in a formal suit"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJifFA2MSrtzJbsbzOQIe0wFq27SKTNwuUv-5qMln98ua1--JsItMS1HoaTfBLva73YYhA0rtxITu1CMg1oIzUZcJb57icjbcV9suKlUqPKQfktwDYjb4s4Ee7guQJfOnwjy0kAAhP9AyTnUMA40qWhVJ82-wmrday35BcwzZSLLWKg466dX_QlClqY4RLKyYKHJ_MwMVmHk7ctSYkkbfbCghd41yotbLqjKbllfWfa1VVpnx1-7LwOLmNT7OkZC3VeOejrF_tYz4J" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Content Area -->
+        <div class="pt-24 px-12 pb-12">
+            <!-- Executive Hero Section -->
+            <div class="mb-12 flex justify-between items-end">
+                <div>
+                    <h3 class="text-[3.5rem] font-black tracking-[-0.03em] leading-none text-primary-container mb-4">
+                        Pending <span class="text-secondary font-medium italic">Approvals.</span>
+                    </h3>
+                    <p class="text-on-surface-variant max-w-xl text-lg leading-relaxed">
+                        You have <span class="font-bold text-primary">8 pending signatures</span> for Multi-Purpose Room
+                        requests previously vetted by Administration. Finalize or modify to commit to the schedule.
+                    </p>
+                </div>
+                <div class="flex gap-4 mb-2">
+                    <div class="p-6 bg-surface-container-low rounded-xl text-right">
+                        <p class="text-on-surface-variant text-xs uppercase tracking-widest font-semibold mb-1">Queue
+                            Health</p>
+                        <p class="text-2xl font-bold text-primary-container">Optimum</p>
+                    </div>
+                    <div class="p-6 bg-[#C5A059]/10 rounded-xl text-right border-r-4 border-secondary">
+                        <p class="text-secondary text-xs uppercase tracking-widest font-semibold mb-1">Response Time</p>
+                        <p class="text-2xl font-bold text-secondary">4.2h Avg.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Bento Grid Layout for Requests -->
+            <div class="space-y-6">
+                <!-- Request Header Legend -->
+                <div
+                    class="grid grid-cols-12 px-8 py-4 bg-primary-container text-white rounded-t-xl text-[0.6875rem] font-bold uppercase tracking-[0.1em]">
+                    <div class="col-span-4">Request Details &amp; Venue</div>
+                    <div class="col-span-2">Department</div>
+                    <div class="col-span-2">Time Slot</div>
+                    <div class="col-span-2">Status Marker</div>
+                    <div class="col-span-2 text-right">Executive Actions</div>
+                </div>
+                <!-- Request Rows -->
+                <div class="space-y-4">
+                    <!-- Row 1 -->
+                    <div
+                        class="grid grid-cols-12 items-center px-8 py-6 bg-surface-container-lowest rounded-xl shadow-[0px_12px_32px_rgba(10,29,55,0.04)] group hover:translate-y-[-2px] transition-transform duration-300">
+                        <div class="col-span-4 flex items-center gap-6">
+                            <div
+                                class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+                                <span class="material-symbols-outlined text-3xl">meeting_room</span>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-primary-container tracking-tight">Executive Hall A1
+                                </h4>
+                                <p class="text-xs text-on-surface-variant">Annual Academic Symposium 2024</p>
+                            </div>
+                        </div>
+                        <div class="col-span-2">
+                            <span
+                                class="text-xs font-semibold px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full">Engineering</span>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-sm font-bold text-primary-container">Mar 24, 2024</p>
+                            <p class="text-[10px] text-on-surface-variant uppercase tracking-wide">09:00 AM - 02:00 PM
+                            </p>
+                        </div>
+                        <div class="col-span-2">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></div>
+                                <span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Admin
+                                    Approved</span>
+                            </div>
+                        </div>
+                        <div class="col-span-2 flex justify-end gap-3">
+                            <button
+                                class="p-2.5 rounded-lg border border-outline-variant hover:bg-surface-container-high transition-colors group/btn">
+                                <span
+                                    class="material-symbols-outlined text-lg text-on-surface-variant group-hover/btn:text-primary">edit</span>
+                            </button>
+                            <button
+                                class="px-6 py-2.5 bg-primary-container text-white text-xs font-bold rounded-lg shadow-lg hover:shadow-xl hover:bg-slate-800 transition-all flex items-center gap-2">
+                                <span>Final Approve</span>
+                                <span class="material-symbols-outlined text-sm">verified_user</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Row 2 -->
+                    <div
+                        class="grid grid-cols-12 items-center px-8 py-6 bg-surface-container-low/50 rounded-xl group transition-all">
+                        <div class="col-span-4 flex items-center gap-6">
+                            <div
+                                class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+                                <span class="material-symbols-outlined text-3xl">hub</span>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-primary-container tracking-tight">Innovation Hub Lab
+                                </h4>
+                                <p class="text-xs text-on-surface-variant">AI Ethics Seminar Series</p>
+                            </div>
+                        </div>
+                        <div class="col-span-2">
+                            <span
+                                class="text-xs font-semibold px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full">Computing</span>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-sm font-bold text-primary-container">Mar 25, 2024</p>
+                            <p class="text-[10px] text-on-surface-variant uppercase tracking-wide">11:00 AM - 01:00 PM
+                            </p>
+                        </div>
+                        <div class="col-span-2">
+                            <div class="flex items-center gap-2 text-on-primary-container">
+                                <div class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest">Awaiting Signature</span>
+                            </div>
+                        </div>
+                        <div class="col-span-2 flex justify-end gap-3 opacity-80 hover:opacity-100 transition-opacity">
+                            <button
+                                class="p-2.5 rounded-lg border border-outline-variant hover:bg-surface-container-high transition-colors">
+                                <span class="material-symbols-outlined text-lg text-on-surface-variant">edit</span>
+                            </button>
+                            <button
+                                class="px-6 py-2.5 bg-primary-container text-white text-xs font-bold rounded-lg shadow-lg hover:bg-slate-800 transition-all flex items-center gap-2">
+                                <span>Final Approve</span>
+                                <span class="material-symbols-outlined text-sm">verified_user</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Row 3 -->
+                    <div
+                        class="grid grid-cols-12 items-center px-8 py-6 bg-surface-container-lowest rounded-xl shadow-[0px_12px_32px_rgba(10,29,55,0.04)] group hover:translate-y-[-2px] transition-transform duration-300 border-l-4 border-secondary/20">
+                        <div class="col-span-4 flex items-center gap-6">
+                            <div
+                                class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+                                <span class="material-symbols-outlined text-3xl">groups</span>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-primary-container tracking-tight">Grand Theatre Hall
+                                </h4>
+                                <p class="text-xs text-on-surface-variant">New Faculty Orientation</p>
+                            </div>
+                        </div>
+                        <div class="col-span-2">
+                            <span
+                                class="text-xs font-semibold px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full">HR
+                                &amp; Admin</span>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-sm font-bold text-primary-container">Mar 27, 2024</p>
+                            <p class="text-[10px] text-on-surface-variant uppercase tracking-wide">08:00 AM - 04:00 PM
+                            </p>
+                        </div>
+                        <div class="col-span-2">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-secondary-fixed-dim animate-pulse"></div>
+                                <span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Priority
+                                    Approval</span>
+                            </div>
+                        </div>
+                        <div class="col-span-2 flex justify-end gap-3">
+                            <button
+                                class="p-2.5 rounded-lg border border-outline-variant hover:bg-surface-container-high transition-colors group/btn">
+                                <span
+                                    class="material-symbols-outlined text-lg text-on-surface-variant group-hover/btn:text-primary">edit</span>
+                            </button>
+                            <button
+                                class="px-6 py-2.5 bg-[#C5A059] text-primary-container text-xs font-bold rounded-lg shadow-lg hover:shadow-xl hover:bg-amber-400 transition-all flex items-center gap-2">
+                                <span>Final Approve</span>
+                                <span class="material-symbols-outlined text-sm">verified_user</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Row 4 -->
+                    <div
+                        class="grid grid-cols-12 items-center px-8 py-6 bg-surface-container-low/50 rounded-xl group transition-all">
+                        <div class="col-span-4 flex items-center gap-6">
+                            <div
+                                class="w-14 h-14 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+                                <span class="material-symbols-outlined text-3xl">podcasts</span>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-primary-container tracking-tight">Media Suite Room
+                                    04</h4>
+                                <p class="text-xs text-on-surface-variant">Marketing Campaign Workshop</p>
+                            </div>
+                        </div>
+                        <div class="col-span-2">
+                            <span
+                                class="text-xs font-semibold px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full">Language
+                                Dept</span>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="text-sm font-bold text-primary-container">Mar 28, 2024</p>
+                            <p class="text-[10px] text-on-surface-variant uppercase tracking-wide">01:00 PM - 03:30 PM
+                            </p>
+                        </div>
+                        <div class="col-span-2">
+                            <div class="flex items-center gap-2 text-on-primary-container">
+                                <div class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest">Vetted by Admin</span>
+                            </div>
+                        </div>
+                        <div class="col-span-2 flex justify-end gap-3">
+                            <button
+                                class="p-2.5 rounded-lg border border-outline-variant hover:bg-surface-container-high transition-colors">
+                                <span class="material-symbols-outlined text-lg text-on-surface-variant">edit</span>
+                            </button>
+                            <button
+                                class="px-6 py-2.5 bg-primary-container text-white text-xs font-bold rounded-lg shadow-lg hover:bg-slate-800 transition-all flex items-center gap-2">
+                                <span>Final Approve</span>
+                                <span class="material-symbols-outlined text-sm">verified_user</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Dashboard Analytics Bottom Section -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Approval Velocity Card -->
+                <div class="bg-surface-container-low p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="relative z-10">
+                        <h5 class="text-sm font-bold text-primary-container uppercase tracking-widest mb-6">Daily
+                            Throughput</h5>
+                        <div class="flex items-end gap-1 h-32 mb-6">
+                            <div
+                                class="flex-1 bg-secondary/20 rounded-t h-[40%] group-hover:h-[50%] transition-all duration-700">
+                            </div>
+                            <div
+                                class="flex-1 bg-secondary/20 rounded-t h-[60%] group-hover:h-[70%] transition-all duration-700">
+                            </div>
+                            <div
+                                class="flex-1 bg-secondary rounded-t h-[80%] group-hover:h-[90%] transition-all duration-700">
+                            </div>
+                            <div
+                                class="flex-1 bg-secondary/20 rounded-t h-[30%] group-hover:h-[40%] transition-all duration-700">
+                            </div>
+                            <div
+                                class="flex-1 bg-secondary/20 rounded-t h-[50%] group-hover:h-[60%] transition-all duration-700">
+                            </div>
+                        </div>
+                        <p class="text-xs text-on-surface-variant">Overall approval speed has increased by <span
+                                class="text-primary font-bold">12%</span> this week.</p>
+                    </div>
+                    <div class="absolute -right-4 -bottom-4 opacity-5">
+                        <span class="material-symbols-outlined text-[120px]">bolt</span>
+                    </div>
+                </div>
+                <!-- Strategic Summary Bento -->
+                <div
+                    class="col-span-2 bg-primary-container p-8 rounded-2xl flex items-center justify-between overflow-hidden relative">
+                    <div class="max-w-md z-10">
+                        <span
+                            class="text-secondary-fixed-dim text-[10px] font-bold uppercase tracking-[0.2em]">Institutional
+                            Health</span>
+                        <h5 class="text-2xl font-bold text-white mt-2 mb-4 leading-snug">Multi-Purpose Rooms are
+                            currently at 88% capacity for next week.</h5>
+                        <div class="flex gap-8">
+                            <div>
+                                <p class="text-white/40 text-[10px] uppercase font-bold tracking-widest mb-1">Confirmed
+                                </p>
+                                <p class="text-2xl font-bold text-white">42</p>
+                            </div>
+                            <div>
+                                <p class="text-white/40 text-[10px] uppercase font-bold tracking-widest mb-1">In
+                                    Pipeline</p>
+                                <p class="text-2xl font-bold text-[#C5A059]">08</p>
+                            </div>
+                            <div>
+                                <p class="text-white/40 text-[10px] uppercase font-bold tracking-widest mb-1">Conflicts
+                                </p>
+                                <p class="text-2xl font-bold text-error">00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="w-48 h-48 rounded-full border border-white/5 absolute -right-12 flex items-center justify-center">
+                        <div class="w-32 h-32 rounded-full border border-white/10 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-[#C5A059]/20 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-[#C5A059] text-3xl"
+                                    style="font-variation-settings: 'FILL' 1;">insights</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Contextual FAB (Only for Home/Dashboard context) -->
+    <button
+        class="fixed bottom-8 right-8 w-16 h-16 bg-primary-container text-secondary rounded-full shadow-2xl flex items-center justify-center hover:scale-105 transition-transform group z-50">
+        <span class="material-symbols-outlined text-2xl group-hover:rotate-90 transition-transform">add</span>
+        <div
+            class="absolute right-20 bg-primary-container text-white px-4 py-2 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            New Directive
+        </div>
+    </button>
+</body>
+
+</html>
